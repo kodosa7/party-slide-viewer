@@ -1,15 +1,15 @@
 ## Party Slide Viewer
 # JavaScript-ish fullscreen image viewer
 
-I have been insensively looking for a lightweight partysystem that coould have been  
-used at scene parties where I'm involved in organizing. As my needs are pretty basic,  
-I just needed the viewer for slides that usually announce other demoscene events that are  
+I have been intensively looking for a lightweight partysystem that could have been  
+used at scene parties I'm involved in organizing. As my needs are pretty basic,  
+I just needed the viewer for slides usually announcing other demoscene events that are  
 close in time. There were literally three options:
 
-Partmeister - which is total mess, huge system depending on PHP knowledge and client/server  
+- Partymeister - which is total mess, huge system depending on PHP knowledge and client/server  
               solution.
-Wuhu - much lighter solution but still dependable on having at least local PHP server installed
-Own system - which is basically this solution you're looking at. 
+- Wuhu - much lighter solution but still dependable on having at least local PHP server installed
+- Own ultra lightweight system - which is basically the solution you're looking at. 
 
 # What it does
 - After entering images on click, it shows them in fullscreen mode (press F11 in your browser)  
@@ -31,5 +31,5 @@ in a loop.
 - Basically, for any party I'd need it in the future.
 
 # Any other message?
-- Amiiiiigaaaaaahh!!!!!111 .. and ZX Spectrum Forever :)
+- Amiiiiigaaaaaahh!!!!!111 .. and ZX Spectrum Forever! :)
  
