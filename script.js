@@ -1,6 +1,6 @@
-const imageContainer = document.getElementById('image-container');
-const addImageBtn = document.getElementById('add-image-btn');
-const slideshowBtn = document.getElementById('slideshow-btn');
+const imageContainer = document.querySelector('.image-container');
+const addImageBtn = document.querySelector('.add-image-btn');
+const slideshowBtn = document.querySelector('.slideshow-btn');
 let images = [];
 let currentIndex = 0;
 let slideshowInterval;
