@@ -98,12 +98,12 @@
             }
         });
 
-        function showNextImage() {
+        const showNextImage = () => {
             currentIndex = (currentIndex + 1) % images.length;
             displayImage(images[currentIndex]);
         }
 
-        function displayImage(image) {
+        const displayImage = (image) => {
             imageContainer.innerHTML = '';
             imageContainer.appendChild(image);
         }
