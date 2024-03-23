@@ -1,9 +1,13 @@
 const imageContainer = document.querySelector('.image-container');
 const addImageBtn = document.querySelector('.add-image-btn');
 const slideshowBtn = document.querySelector('.slideshow-btn');
+const setAddIntervalBtn = document.querySelector('.set-add-interval-btn');
+const setSubIntervalBtn = document.querySelector('.set-sub-interval-btn');
+
 let images = [];
 let currentIndex = 0;
 let slideshowInterval;
+let interval = 2000;
 
 addImageBtn.addEventListener('click', () => {
     const input = document.createElement('input');
@@ -37,9 +41,24 @@ slideshowBtn.addEventListener('click', () => {
     } else {
         slideshowInterval = setInterval(() => {
             showNextImage();
-        }, 2000);
+        }, interval);
         slideshowBtn.textContent = 'Stop Slideshow';
     }
+});
+
+setAddIntervalBtn.addEventListener('click', () => {
+    console.log("setADDintervalbtn clicked");
+    interval += 1000;
+    console.log(interval);
+    document.querySelector('.display-interval').innerHTML = interval / 1000;
+});
+
+setSubIntervalBtn.addEventListener('click', () => {
+    console.log("setSUBintervalbtn clicked");
+    if (interval <= 0) interval = 0;
+    interval -= 1000;
+    console.log(interval);
+    document.querySelector('.display-interval').innerHTML = interval / 1000;
 });
 
 const showNextImage = () => {
