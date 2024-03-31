@@ -67,6 +67,6 @@ const showNextImage = () => {
 }
 
 const displayImage = (image) => {
-    imageContainer.innerHTML = '';
+    imageContainer.innerHTML = '<div class="image">test</div>';
     imageContainer.appendChild(image);
 }
