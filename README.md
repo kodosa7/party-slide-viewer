@@ -6,8 +6,7 @@ used at scene parties I'm involved in organizing. As my needs are pretty basic,
 I just needed the viewer for slides usually announcing other demoscene events that are  
 close in time. There were literally three options:
 
-- Partymeister - which is total mess, huge system depending on PHP knowledge and client/server  
-              solution.
+- Partymeister - which is total mess, huge system depending on PHP knowledge and client/server solution.
 - Wuhu - much lighter solution but still dependable on having at least local PHP server installed
 - Own ultra lightweight system - which is basically the solution you're looking at. 
 
@@ -19,7 +18,7 @@ in a loop.
 - There's no entry presentation system nor any kind of entry input (yet)
 
 # How to use it
-- open the html inyour browser
+- open the html in your browser
 - click on the button and upload your image
 - do it again for another images if you need them
 - connect the screen output to the party beamer
