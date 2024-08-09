@@ -1,8 +1,8 @@
-const imageContainer = document.querySelector('.image-container');
-const addImageBtn = document.querySelector('.add-image-btn');
-const slideshowBtn = document.querySelector('.slideshow-btn');
-const setAddIntervalBtn = document.querySelector('.set-add-interval-btn');
-const setSubIntervalBtn = document.querySelector('.set-sub-interval-btn');
+const imageContainer = document.querySelector(".image-container");
+const addImageBtn = document.querySelector(".add-image-btn");
+const slideshowBtn = document.querySelector(".slideshow-btn");
+const setAddIntervalBtn = document.querySelector(".set-add-interval-btn");
+const setSubIntervalBtn = document.querySelector(".set-sub-interval-btn");
 
 let images = [];
 let currentIndex = 0;
@@ -10,10 +10,10 @@ let slideshowInterval;
 let interval = 2000;
 let buttonsVisible = true;
 
-addImageBtn.addEventListener('click', () => {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
+addImageBtn.addEventListener("click", () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/*";
     input.onchange = (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -29,37 +29,37 @@ addImageBtn.addEventListener('click', () => {
     input.click();
 });
 
-slideshowBtn.addEventListener('click', () => {
+slideshowBtn.addEventListener("click", () => {
     if (images.length === 0) {
-        alert('Please add images first.');
+        alert("Please add images first.");
         return;
     }
 
     if (slideshowInterval) {
         clearInterval(slideshowInterval);
         slideshowInterval = null;
-        slideshowBtn.textContent = 'Slideshow';
+        slideshowBtn.textContent = "Slideshow";
     } else {
         slideshowInterval = setInterval(() => {
             showNextImage();
         }, interval);
-        slideshowBtn.textContent = 'Stop Slideshow';
+        slideshowBtn.textContent = "Stop Slideshow";
     }
 });
 
-setAddIntervalBtn.addEventListener('click', () => {
+setAddIntervalBtn.addEventListener("click", () => {
     console.log("setADDintervalbtn clicked");
     interval += 1000;
     console.log(interval);
-    document.querySelector('.display-interval').innerHTML = interval / 1000;
+    document.querySelector(".display-interval").innerHTML = interval / 1000;
 });
 
-setSubIntervalBtn.addEventListener('click', () => {
+setSubIntervalBtn.addEventListener("click", () => {
     console.log("setSUBintervalbtn clicked");
     if (interval <= 0) interval = 0;
     interval -= 1000;
     console.log(interval);
-    document.querySelector('.display-interval').innerHTML = interval / 1000;
+    document.querySelector(".display-interval").innerHTML = interval / 1000;
 });
 
 const showNextImage = () => {
@@ -68,7 +68,7 @@ const showNextImage = () => {
 }
 
 const displayImage = (image) => {
-    imageContainer.innerHTML = '<div class="image">test</div>';
+    imageContainer.innerHTML = "<div class=\"image\">test</div>";
     imageContainer.appendChild(image);
 }
 

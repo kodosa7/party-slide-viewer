@@ -1,6 +1,8 @@
 ## Party Slide Viewer
 # JavaScript-ish fullscreen image viewer
 
+# still WIP!
+
 I have been intensively looking for a lightweight partysystem that could have been  
 used at scene parties I'm involved in organizing. As my needs are pretty basic,  
 I just needed the viewer for slides usually announcing other demoscene events that are  
