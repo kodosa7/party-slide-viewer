@@ -3,6 +3,7 @@ const addImageBtn = document.querySelector(".add-image-btn");
 const slideshowBtn = document.querySelector(".slideshow-btn");
 const setAddIntervalBtn = document.querySelector(".set-add-interval-btn");
 const setSubIntervalBtn = document.querySelector(".set-sub-interval-btn");
+const controlTexts = document.querySelector(".control-texts");
 
 let images = [];
 let currentIndex = 0;
@@ -73,7 +74,7 @@ const displayImage = (image) => {
 }
 
 const toggleButtonsVisibility = () => {
-    const buttons = [addImageBtn, slideshowBtn, setAddIntervalBtn, setSubIntervalBtn];
+    const buttons = [addImageBtn, slideshowBtn, setAddIntervalBtn, setSubIntervalBtn, controlTexts];
     buttons.forEach(button => {
         if (buttonsVisible) {
             button.style.display = "none";
