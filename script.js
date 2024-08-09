@@ -8,6 +8,7 @@ let images = [];
 let currentIndex = 0;
 let slideshowInterval;
 let interval = 2000;
+let buttonsVisible = true;
 
 addImageBtn.addEventListener('click', () => {
     const input = document.createElement('input');
@@ -70,3 +71,21 @@ const displayImage = (image) => {
     imageContainer.innerHTML = '<div class="image">test</div>';
     imageContainer.appendChild(image);
 }
+
+const toggleButtonsVisibility = () => {
+    const buttons = [addImageBtn, slideshowBtn, setAddIntervalBtn, setSubIntervalBtn];
+    buttons.forEach(button => {
+        if (buttonsVisible) {
+            button.style.display = "none";
+        } else {
+            button.style.display = "block";
+        }
+    });
+    buttonsVisible = !buttonsVisible;
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "m" || e.key === "M") {
+        toggleButtonsVisibility();
+    }
+});
