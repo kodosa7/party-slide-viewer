@@ -15,6 +15,7 @@ close in time. There were literally three options:
 # What it does
 - After entering images on click, it shows them in fullscreen mode (press F11 in your browser)  
 in a loop.
+- You can press the M key to hide/show the control buttons
 
 # What it does not do
 - There's no entry presentation system nor any kind of entry input (yet)
