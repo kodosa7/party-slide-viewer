@@ -49,6 +49,9 @@ html {
 }
 
 .buttons {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
     position: fixed;
     bottom: 20px;
     left: 50%;

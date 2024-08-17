@@ -48,19 +48,25 @@ slideshowBtn.addEventListener("click", () => {
     }
 });
 
+// increase interval button
 setAddIntervalBtn.addEventListener("click", () => {
     console.log("setADDintervalbtn clicked");
     interval += 1000;
+    setSubIntervalBtn.disabled = false;  // always enable the '-' button when the '+' button is pressed
     console.log(interval);
-    document.querySelector(".display-interval").innerHTML = interval / 1000;
+    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000);
 });
 
+// decrease interval button
 setSubIntervalBtn.addEventListener("click", () => {
     console.log("setSUBintervalbtn clicked");
-    if (interval <= 0) interval = 0;
     interval -= 1000;
-    console.log(interval);
-    document.querySelector(".display-interval").innerHTML = interval / 1000;
+    console.log("interval after", interval);
+    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000);
+    if (interval === 1000) {
+        setSubIntervalBtn.disabled = true;  // disable the '-' button if the interval is 1
+    }
+    
 });
 
 const showNextImage = () => {
