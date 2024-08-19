@@ -59,6 +59,7 @@ img {
 .buttons {
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 3rem;
     position: fixed;
     bottom: 20px;
