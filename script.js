@@ -1,5 +1,5 @@
 const imageContainer = document.querySelector(".image-container");
-const imageContainerImg = document.querySelector(".image-container img");
+const imageContainerImg = document.querySelector(".image-container-img");
 const addImageBtn = document.querySelector(".add-image-btn");
 const slideshowBtn = document.querySelector(".slideshow-btn");
 const setAddIntervalBtn = document.querySelector(".set-add-interval-btn");
@@ -13,6 +13,7 @@ let slideshowInterval;
 let interval = 2000;
 let buttonsVisible = true;
 
+// images are being pushed into an array
 addImageBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
@@ -70,9 +71,10 @@ setSubIntervalBtn.addEventListener("click", () => {
     console.log("setSUBintervalbtn clicked");
     interval -= 1000;
     console.log("interval after", interval);
-    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000);
+    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // change the number in DOM
     imageContainerImg.style.animationDuration = '${interval}ms' // inject the interval to the css animation
     if (interval === 1000) {
+        console.log("interval === 1000 happened");
         setSubIntervalBtn.disabled = true;  // disable the '-' button if the interval is 1000 milliseconds
     }
 });
