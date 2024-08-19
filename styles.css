@@ -18,7 +18,7 @@ html {
     background-color: #000;
 }
 
-.image-container-img {
+img {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@ html {
     object-fit: contain;
     opacity: 0;
     animation: slideInOut;
-    animation-duration: 0ms;
+    animation-duration: 1000ms;
     animation-timing-function: ease-in-out;
     animation-play-state: running;
 }
