@@ -1,9 +1,11 @@
 const imageContainer = document.querySelector(".image-container");
+const imageContainerImg = document.querySelector(".image-container img");
 const addImageBtn = document.querySelector(".add-image-btn");
 const slideshowBtn = document.querySelector(".slideshow-btn");
 const setAddIntervalBtn = document.querySelector(".set-add-interval-btn");
 const setSubIntervalBtn = document.querySelector(".set-sub-interval-btn");
 const controlTexts = document.querySelector(".control-texts");
+const displayInterval = document.querySelector(".display-interval");
 
 let images = [];
 let currentIndex = 0;
@@ -30,6 +32,7 @@ addImageBtn.addEventListener("click", () => {
     input.click();
 });
 
+// start/stop button
 slideshowBtn.addEventListener("click", () => {
     if (images.length === 0) {
         alert("Please add images first.");
@@ -37,14 +40,18 @@ slideshowBtn.addEventListener("click", () => {
     }
 
     if (slideshowInterval) {
+        console.log("Stop button pressed")
         clearInterval(slideshowInterval);
         slideshowInterval = null;
         slideshowBtn.textContent = "Slideshow";
+        imageContainerImg.style.animationPlayState = 'paused';
     } else {
+        console.log("Start button pressed")
         slideshowInterval = setInterval(() => {
             showNextImage();
         }, interval);
-        slideshowBtn.textContent = "Stop Slideshow";
+        slideshowBtn.textContent = "Stop";
+        imageContainerImg.style.animationPlayState = 'running';
     }
 });
 
@@ -54,7 +61,8 @@ setAddIntervalBtn.addEventListener("click", () => {
     interval += 1000;
     setSubIntervalBtn.disabled = false;  // always enable the '-' button when the '+' button is pressed
     console.log(interval);
-    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000);
+    displayInterval.innerHTML = Math.floor(interval / 1000); // change the number in DOM
+    imageContainerImg.style.animationDuration = '${interval}ms' // inject the interval to the css animation
 });
 
 // decrease interval button
@@ -63,10 +71,10 @@ setSubIntervalBtn.addEventListener("click", () => {
     interval -= 1000;
     console.log("interval after", interval);
     document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000);
+    imageContainerImg.style.animationDuration = '${interval}ms' // inject the interval to the css animation
     if (interval === 1000) {
-        setSubIntervalBtn.disabled = true;  // disable the '-' button if the interval is 1
+        setSubIntervalBtn.disabled = true;  // disable the '-' button if the interval is 1000 milliseconds
     }
-    
 });
 
 const showNextImage = () => {

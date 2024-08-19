@@ -26,7 +26,10 @@ html {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    animation: slideInOut 4s ease-in-out infinite; /* Default animation time, will be adjusted dynamically */
+    animation: slideInOut;
+    animation-duration: 0ms;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
 }
 
 @keyframes slideInOut {
