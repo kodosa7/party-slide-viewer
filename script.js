@@ -76,7 +76,6 @@ setSubIntervalBtn.addEventListener("click", () => {
     
     // disable the '-' button if the interval is 1000 milliseconds    
     if (interval === 1000) {
-        console.log("interval === 1000 happened");
         setSubIntervalBtn.disabled = true;
     };
 });
@@ -87,7 +86,7 @@ const showNextImage = () => {
 }
 
 const displayImage = (image) => {
-    imageContainer.innerHTML = "<div class='image'>test</div>";
+    imageContainer.innerHTML = "<div class='image'></div>";
     imageContainer.appendChild(image);
 }
 
