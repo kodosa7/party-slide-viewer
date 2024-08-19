@@ -73,10 +73,12 @@ setSubIntervalBtn.addEventListener("click", () => {
     console.log("interval after", interval);
     document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // change the number in DOM
     imageContainerImg.style.animationDuration = '${interval}ms' // inject the interval to the css animation
+    
+    // disable the '-' button if the interval is 1000 milliseconds    
     if (interval === 1000) {
         console.log("interval === 1000 happened");
-        setSubIntervalBtn.disabled = true;  // disable the '-' button if the interval is 1000 milliseconds
-    }
+        setSubIntervalBtn.disabled = true;
+    };
 });
 
 const showNextImage = () => {
