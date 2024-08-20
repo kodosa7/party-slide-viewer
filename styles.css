@@ -28,7 +28,7 @@ img {
     object-fit: contain;
     opacity: 0;
     animation: slideInOut;
-    /* animation-duration: 12000ms; */
+    /* animation-duration: this_line_is_dynamically_injected_by_JavaScript */
     animation-timing-function: ease-in-out;
     animation-play-state: running;
 }
