@@ -61,7 +61,8 @@ setAddIntervalBtn.addEventListener("click", () => {
     setSubIntervalBtn.disabled = false;  // always enable the '-' button when the '+' button is pressed
     console.log(interval);
     displayInterval.innerHTML = Math.floor(interval / 1000); // change the number in DOM
-    imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    // imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    updateAnimationDuration(interval);
 });
 
 // decrease interval button
@@ -70,13 +71,30 @@ setSubIntervalBtn.addEventListener("click", () => {
     interval -= 1000;
     console.log("interval after", interval);
     document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // change the number in DOM
-    imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    // imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    updateAnimationDuration(interval);
     
     // disable the '-' button if the interval is 1000 milliseconds    
     if (interval === 1000) {
         setSubIntervalBtn.disabled = true;
     };
 });
+
+// find a CSS rule in the CSS file and change the animation-duration value
+const updateAnimationDuration = (newDuration) => {
+    // get the CSS stylesheet
+    const stylesheet = document.styleSheets[0]; // it's the first stylesheet
+    const rules = stylesheet.cssRules;
+
+    // find the one that matches 'img'
+    for (let i = 0; i < rules.length; i++) {
+        const rule = rules[i];
+        if (rule.selectorText === "img") {
+            rule.style.animationDuration = `${newDuration}ms`;
+            break;
+        }
+    }
+}
 
 const showNextImage = () => {
     currentIndex = (currentIndex + 1) % images.length;
