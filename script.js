@@ -49,7 +49,7 @@ slideshowBtn.addEventListener("click", () => {
         console.log("Start button pressed")
         slideshowInterval = setInterval(() => {
             showNextImage();
-        }, interval + (interval * 0.2)); // Add 20% time to the interval because of FadeIn/FadeOut delay in the animation
+        }, interval);
         slideshowBtn.textContent = "Stop";
     }
 });
