@@ -46,6 +46,7 @@ slideshowBtn.addEventListener("click", () => {
         slideshowInterval = null;
         slideshowBtn.textContent = "Slideshow";
     } else {
+        showNextImage();
         console.log("Start button pressed")
         slideshowInterval = setInterval(() => {
             showNextImage();
