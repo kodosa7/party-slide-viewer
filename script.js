@@ -13,7 +13,7 @@ let slideshowInterval;
 let interval = 2000;
 let buttonsVisible = true;
 
-// images are being pushed into an array
+// Images are being pushed into an array
 addImageBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
@@ -33,7 +33,7 @@ addImageBtn.addEventListener("click", () => {
     input.click();
 });
 
-// start/stop button
+// Start/Stop button
 slideshowBtn.addEventListener("click", () => {
     if (images.length === 0) {
         alert("Please add images first.");
@@ -54,47 +54,46 @@ slideshowBtn.addEventListener("click", () => {
     }
 });
 
-// increase interval button
+// Increase interval button
 setAddIntervalBtn.addEventListener("click", () => {
     console.log("setADDintervalbtn clicked");
     interval += 1000;
-    setSubIntervalBtn.disabled = false;  // always enable the '-' button when the '+' button is pressed
+    setSubIntervalBtn.disabled = false;  // Always enable the '-' button when the '+' button is pressed
     console.log(interval);
-    displayInterval.innerHTML = Math.floor(interval / 1000); // change the number in DOM
-    // imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    displayInterval.innerHTML = Math.floor(interval / 1000); // Change the number in DOM
     updateAnimationDuration(interval);
 });
 
-// decrease interval button
+// Decrease interval button
 setSubIntervalBtn.addEventListener("click", () => {
     console.log("setSUBintervalbtn clicked");
     interval -= 1000;
     console.log("interval after", interval);
-    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // change the number in DOM
-    // imageContainer.innerHTML = `<div class='image'><script>img {animation-duration: ${interval}ms}</script></div>` // inject the interval to the css animation
+    document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // Change the number in DOM
     updateAnimationDuration(interval);
     
-    // disable the '-' button if the interval is 1000 milliseconds    
+    // Disable the '-' button if the interval is 1000 milliseconds    
     if (interval === 1000) {
         setSubIntervalBtn.disabled = true;
     };
 });
 
-// find a CSS rule in the CSS file and change the animation-duration value
+// Force update the style in the document head
+// by overriding the animation-duration property
 const updateAnimationDuration = (newDuration) => {
-    // get the CSS stylesheet
-    const stylesheet = document.styleSheets[0]; // it's the first stylesheet
-    const rules = stylesheet.cssRules;
+    let styleElement = document.getElementById("dynamic-animation-style");
 
-    // find the one that matches 'img'
-    for (let i = 0; i < rules.length; i++) {
-        const rule = rules[i];
-        if (rule.selectorText === "img") {
-            rule.style.animationDuration = `${newDuration}ms`;
-            break;
-        }
+    // If the style element doesn't exist, create it
+    if (!styleElement) {
+        styleElement = document.createElement("style");
+        styleElement.id = "dynamic-animation-style";
+        document.head.appendChild(styleElement);
     }
+
+    // Force overriding the content of the style element
+    styleElement.innerHTML = `img { animation-duration: ${newDuration}ms !important; }`;
 }
+
 
 const showNextImage = () => {
     currentIndex = (currentIndex + 1) % images.length;
