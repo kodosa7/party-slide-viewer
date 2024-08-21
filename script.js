@@ -27,6 +27,7 @@ addImageBtn.addEventListener("click", () => {
             reader.onload = (e) => {
                 const img = new Image();
                 img.src = e.target.result;
+                img.name = file.name; // Store the file name in the image object
                 images.push(img);
             };
             reader.readAsDataURL(file);
@@ -126,16 +127,17 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
 const toggleFilesVisibility = () => {
-        if (filesVisible) {
-            files.style.display = "none";
-        } else {
-            files.style.display = "block";
-            for (let i = 0; i > images.length; i++) {
-                file.innerHTML = `${images.i}`;
-            }
-            // files.innerHTML = `${images}`;
-        }
+    if (filesVisible) {
+        files.style.display = "none";
+    } else {
+        files.style.display = "block";
+        files.innerHTML = "";
+        images.forEach(image => {
+            files.innerHTML += `${image.name}<br>`;
+        });
+    }
     filesVisible = !filesVisible;
 }
 
