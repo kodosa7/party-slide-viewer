@@ -131,6 +131,7 @@ const toggleFilesVisibility = () => {
             files.style.display = "none";
         } else {
             files.style.display = "block";
+            files.innerHTML = `${images}`;
         }
     filesVisible = !filesVisible;
 }
