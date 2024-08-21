@@ -40,12 +40,12 @@ img {
         opacity: 0;
     }
     /* stay */
-    10% {
+    5% {
         transform: translateX(0);
         opacity: 1;
     }
     /* slide out */
-    90% {
+    95% {
         transform: translateX(0);
         opacity: 1;
     }
@@ -75,7 +75,7 @@ img {
     cursor: pointer;
 }
 
-.files-wrapper {
+.files {
     display: none;
     position: absolute;
     left: 5rem;

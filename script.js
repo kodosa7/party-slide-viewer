@@ -11,7 +11,7 @@ const files = document.querySelector(".files");
 let images = [];
 let currentIndex = 0;
 let slideshowInterval;
-let interval = 2000;
+let interval = 20000;
 let buttonsVisible = true;
 let filesVisible = false;
 
