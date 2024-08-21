@@ -6,12 +6,14 @@ const setAddIntervalBtn = document.querySelector(".set-add-interval-btn");
 const setSubIntervalBtn = document.querySelector(".set-sub-interval-btn");
 const controlTexts = document.querySelector(".control-texts");
 const displayInterval = document.querySelector(".display-interval");
+const files = document.querySelector(".files");
 
 let images = [];
 let currentIndex = 0;
 let slideshowInterval;
 let interval = 2000;
 let buttonsVisible = true;
+let filesVisible = false;
 
 // Images are being pushed into an array
 addImageBtn.addEventListener("click", () => {
@@ -121,5 +123,20 @@ const toggleButtonsVisibility = () => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "m" || e.key === "M") {
         toggleButtonsVisibility();
+    }
+});
+
+const toggleFilesVisibility = () => {
+        if (filesVisible) {
+            files.style.display = "none";
+        } else {
+            files.style.display = "block";
+        }
+    filesVisible = !filesVisible;
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "f" || e.key === "F") {
+        toggleFilesVisibility();
     }
 });
