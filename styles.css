@@ -75,10 +75,13 @@ img {
     cursor: pointer;
 }
 
-.files {
+.files-wrapper {
     display: none;
     position: absolute;
-    left: 10rem;
-    top: 10rem;
-    border: 5px solid red;
+    left: 5rem;
+    top: 5rem;
+    padding: 0.25rem;
+    color: #fff;
+    background-color: #11cc;
+    border-radius: 0.1rem;
 }

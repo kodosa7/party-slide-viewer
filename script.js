@@ -134,8 +134,8 @@ const toggleFilesVisibility = () => {
     } else {
         files.style.display = "block";
         files.innerHTML = "";
-        images.forEach(image => {
-            files.innerHTML += `${image.name}<br>`;
+        images.forEach((image, i) => {
+            files.innerHTML += `${i.toString().padStart(2, '0')}: ${image.name}<br>`;
         });
     }
     filesVisible = !filesVisible;
