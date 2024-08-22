@@ -66,6 +66,9 @@ setAddIntervalBtn.addEventListener("click", () => {
     console.log(interval);
     displayInterval.innerHTML = Math.floor(interval / 1000); // Change the number in DOM
     updateAnimationDuration(interval);
+
+    // Disable the '+' button if the interval is 100000ms
+    setAddIntervalBtn.disabled = interval === 100000;
 });
 
 // Decrease interval button
@@ -76,10 +79,11 @@ setSubIntervalBtn.addEventListener("click", () => {
     document.querySelector(".display-interval").innerHTML = Math.floor(interval / 1000); // Change the number in DOM
     updateAnimationDuration(interval);
     
-    // Disable the '-' button if the interval is 1000 milliseconds    
-    if (interval === 1000) {
-        setSubIntervalBtn.disabled = true;
-    };
+    // Disable the '-' button if the interval is 1000ms    
+    setSubIntervalBtn.disabled = interval === 1000;
+
+    // Enable the '+' button if the interval is less than 100000ms
+    setAddIntervalBtn.disabled = false;
 });
 
 // Force update the style in the document head
