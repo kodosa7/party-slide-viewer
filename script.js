@@ -131,17 +131,23 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-
 const toggleFilesVisibility = () => {
-    if (filesVisible) {
-        files.style.display = "none";
-    } else {
+    console.log(images);
+    
+    if (!filesVisible) {
         files.style.display = "block";
-        files.innerHTML = "";
-        images.forEach((image, i) => {
-            files.innerHTML += `${i.toString().padStart(2, '0')}: ${image.name}<br>`;
-        });
+        if (images.length === 0) {
+            files.innerHTML = `No images added.`;
+        } else {
+            files.innerHTML = "";
+            images.forEach((image, i) => {
+                files.innerHTML += `${i.toString().padStart(2, '0')}: ${image.name}<br>`;
+            });
+        }
+    } else {
+        files.style.display = "none";
     }
+    
     filesVisible = !filesVisible;
 }
 
