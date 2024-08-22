@@ -1,5 +1,5 @@
-## Party Slide Viewer
-# A rotation slides viewer for demoparties
+# Party Slide Viewer
+## A rotation slides viewer for demoparties
 
 ## [Still WIP!]
 
@@ -12,7 +12,7 @@ close in time. There were literally three options:
 - Wuhu - much lighter solution but still dependable on having at least local PHP server installed
 - Own ultra lightweight system - which is basically the solution you're looking at. 
 
-# What it does
+## What it does
 - After entering images on click, it shows them in fullscreen mode (press ``F11`` in your browser)  
 in a rotation loop.
 - You can press the ``M`` key to hide/show the control buttons
@@ -20,10 +20,10 @@ in a rotation loop.
 - When changing the rotation delay, restart the rotation
 - When new slides added and the files box is visible, relaunch it (press ``F`` two times)
 
-# What it does not do
+## What it does not do
 - There's no entry presentation system nor any kind of entry input (yet)
 
-# How to use it
+## How to use it
 - open the HTML file in your browser
 - click on the button and upload your image
 - do it again for another images if you need them
@@ -31,11 +31,11 @@ in a rotation loop.
 - [optional] connect the screen output to the party beamer
 - press the ``Slideshow`` button and watch :)
 
-# Will it improve?
+## Will it improve?
 - I don't know. Maybe.
 
-# What party is this for?
+## What party is this for?
 - Basically, for any party I'd need it in the future where slide rotations are required.
 
-# Pants off?
+## Pants off?
 - Amiiiiigaaaaaahh!!!!!111 .. and ZX Spectrum Forever! :)
