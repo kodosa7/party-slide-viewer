@@ -55,6 +55,10 @@ img {
         opacity: 0;
     }
 }
+.control-texts {
+    font-size: 0.65rem;
+    text-align: left;
+}
 
 .buttons {
     display: flex;
