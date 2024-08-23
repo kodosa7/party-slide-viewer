@@ -1,8 +1,6 @@
 # Party Slide Viewer
 ## A rotation slides viewer for demoparties
 
-## [Still WIP!]
-
 I have been intensively looking for a lightweight partysystem that could have been  
 used at scene parties I'm involved in organizing. As my needs are pretty basic,  
 I just needed a rotation slide viewer usually announcing other demoscene events that are  
@@ -18,7 +16,7 @@ in a rotation loop.
 - You can press the ``M`` key to hide/show the control buttons
 - You can press the ``F`` key to show/hide the list of image file names you have added
 - When changing the rotation delay, restart the rotation
-- When new slides added and the files box is visible, relaunch it (press ``F`` two times)
+- When new slides added and the files box is visible, relaunch it (press ``F`` twice)
 
 ## What it does not do
 - There's no entry presentation system nor any kind of entry input (yet)
